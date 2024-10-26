@@ -1,0 +1,79 @@
+
+<html>
+    <head>
+<style>
+ul, #myUL {
+    list-style-type: none;
+  }
+  
+  #myUL {
+    margin: 0;
+    padding: 5%;
+  }
+  #m {
+    margin: 1%;
+    padding: 2%;
+  }
+  
+  .caret {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+  }
+  
+  .caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  
+  .caret-down::before {
+    -ms-transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(90deg);  
+  }
+  
+  .nested {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
+  .h{
+    background-color: rgb(34, 34, 123);
+  }
+</style>
+</head>
+<body class="h">
+<ul id="myUL">
+    <li><span class="caret" style="color:white;">DATA DYNASTY</span>
+      <ul class="nested">
+        <li id="m"><a href="discreption1 (2).html" target="p22" style="color:white;">DESCRPTION</a></li>
+        <li id="m"><a href="imag1.html" target="p22" style="color:white;">IMAGES</a></li>
+        </ul>
+  </ul>
+  <ul id="myUL">
+    <li><span class="caret" style="color:white;">PYTHON</span>
+      <ul class="nested">
+        <li id="m"><a href="discreption2.html" target="p22" style="color:white;">DESCRPTION</a></li>
+        <li id="m"><a href="imag2.html" target="p22" style="color:white;">IMAGES</a></li>  
+  </ul>
+  </ul>
+  
+  <script>
+  var toggler = document.getElementsByClassName("caret");
+  var i;
+  
+  for (i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function() {
+      this.parentElement.querySelector(".nested").classList.toggle("active");
+      this.classList.toggle("caret-down");
+    });
+  }
+  </script>
+  </body>
+  </html>
